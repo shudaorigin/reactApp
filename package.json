@@ -11,11 +11,15 @@
     "react": "~15.4.0",
     "react-native": "0.41.2",
     "react-native-2-side-menus": "^0.2.1",
+    "react-native-cookies": "^2.0.0",
+    "react-native-custom-navigation": "^0.2.2",
     "react-native-menu": "^0.20.2",
     "react-native-modal-dropdown": "^0.4.1",
+    "react-native-navbar": "^1.6.0",
     "react-native-router-redux": "^0.2.2",
     "react-native-side-menu": "^0.20.1",
-    "react-native-sidebar": "^0.2.0"
+    "react-native-sidebar": "^0.2.0",
+    "react-native-transparent-bar": "0.0.1"
   },
   "devDependencies": {
     "babel-jest": "18.0.0",
