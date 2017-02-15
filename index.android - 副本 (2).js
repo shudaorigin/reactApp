@@ -11,9 +11,7 @@ import {
   StyleSheet,
   Text,
   ListView,
-  TextInput ,
   View,
-  Button,
   Image,
   TouchableOpacity,
   TouchableHighlight,
@@ -33,7 +31,6 @@ var TwoSideMenus = require('./component/TwoSideMenus');
 
 var screenW = Dimensions.get('window').width;
 var screenH = Dimensions.get('window').height;
-const onButtonPress = () => { alert('Button has been pressed!'); };
 
 const TopNavigation = () => (
   <View style={{ padding: 10, flexDirection: 'row', backgroundColor: 'pink' }}>
@@ -126,12 +123,6 @@ var BoxStyles = StyleSheet.create({
 		width: 40,
 		height: 40,
 	},
-	backgroundImage: {
-        flex: 1,
-		// remove width and height to override fixed static size
-		width: null,
-		height: null,
-    },
 })
 
 var Box = React.createClass({
@@ -179,26 +170,6 @@ class MenuSideItem extends Component {
     );
   }
 }
-
-class BackgroundImage extends Component {
-  render() {
-    const {source, children, style, ...props} = this.props
-    return (
-      <Image source={ source }
-             style={ { flex: 1, width: null, height: null, ...style } }
-             {...props}>
-        { children }
-      </Image>
-    )
-  }
-};
-
-BackgroundImage.propTypes = {
-  source: React.PropTypes.object,
-  children: React.PropTypes.object,
-  style: React.PropTypes.object
-};
-
  
 var reactApp = React.createClass({
 	/*
@@ -209,7 +180,6 @@ var reactApp = React.createClass({
 	*/
 		
 	 componentDidMount() {
-		 /*
 		this.refs.menu.moreLifeCycles(this.refs.leftMenu, this.refs.rightMenu);
 	 	setTimeout(() => {
 		  this.refs.menu.openMenu('left');
@@ -219,7 +189,6 @@ var reactApp = React.createClass({
 		  }, 2000);
 	 
 		}, 2000);
-		*/
 	},
 	 
 	
@@ -243,17 +212,11 @@ var reactApp = React.createClass({
 	
 	render() {
 		return (
-		/*
 		 <TwoSideMenus
 			ref="menu"
 			leftMenu={<MenuSideItem ref="leftMenu"  color="yellow" style={{borderWidth:1,borderColor:'red'}}/>}
 			rightMenu={<MenuSideItem ref="rightMenu" color="red"/>}>
-		 </TwoSideMenus>
-		 <Text style={{width:40,marginTop:5,}}>发布</Text> 
-		 
-		 */
-		<BackgroundImage source={ { uri: "http://scimg.158sucai.com/allimg/160702/105-160F2162TJ56.jpg" } }>
- 
+		
 					  <View style={{
 						flex: 1,
 						flexDirection: 'column',
@@ -279,20 +242,9 @@ var reactApp = React.createClass({
 							renderRow={this.renderRow}
 						/>
 							
-						<View style={{ height: 50, backgroundColor: '#fffef9',borderTopColor:'#CCCCCC',borderTopWidth:1,flexDirection: 'row',}} >
-						    <View style={{ flex:1, flexDirection: 'row',alignItems:'center',justifyContent:'center',paddingLeft:5,paddingRight:5,}}>
-							 <Image source={require('./images/flower.png')} style={{width:30,height:30,}} />                            
- 							 <TextInput  style={{ flex:1,borderColor: 'white',}}
-								onChangeText={(text) => this.setState({text})}
-								value={this.state.text} >
-							   </TextInput > 
-							   <Button onPress={onButtonPress} title="发布" color="green"  style={{width:30,height:30,}}
-							   />
-							</View>
-						</View>
-					</View>	   
-		
-	       </BackgroundImage>
+						<View style={{ height: 50, backgroundColor: 'steelblue'}} />
+					  </View>
+		  </TwoSideMenus>
 		);
 	}
 })
