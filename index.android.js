@@ -27,8 +27,6 @@ import Svg,{
     Defs,
     Stop
 } from 'react-native-svg';
-
-
 import {
   AppRegistry,
   StyleSheet,
@@ -43,6 +41,9 @@ import {
   TouchableHighlight,
   ScrollView,
 } from 'react-native';
+
+import Dialog from 'react-native-dialog';
+				
 var PushNotification = require('react-native-push-notification');
 PushNotification.configure({
 
@@ -127,13 +128,29 @@ const onButtonPress = () => {
 		actions: '["Yes", "No"]',  // (Android only) See the doc for notification actions to know more
 	});
 }; 
+ const onButtonPress2 = () => {
+	Dialog.prompt("填写资料", null, [{
+            text: '确定',
+            onPress: (value) => {
+               
+            },
+        }], undefined); 
+ };
  
+
+
+
 export default class reactApp extends Component {
 	constructor(props) {
         super(props);      
     };
 	
     render() {
+		
+		var doms = [];
+		for (var i = 0; i < 240; i++) {
+		  doms.push(<ListItem><Text>Simon Mignolet----- + {i} </Text></ListItem>);
+		}
         return (
             <Container>
                 <Header searchBar rounded>
@@ -147,10 +164,14 @@ export default class reactApp extends Component {
                 </Header>
 				<Content>
                    <LButton
-					  onPress={onButtonPress}
+					  onPress={onButtonPress2}
 					  title="Press Me"
 					  accessibilityLabel="See an informative alert"
 					/>
+					
+					{doms}
+					
+					
 				</Content>
                 <Footer>
                    <FooterTab>
@@ -158,8 +179,8 @@ export default class reactApp extends Component {
                             <Text>Apps</Text>
                             <Icon name='ios-apps-outline' />
                         </Button>
-                        <Button>
-                            <Text>Camera</Text>
+                        <Button  badgeValue="2">
+                            <Text >Camera</Text>
                             <Icon name='ios-camera-outline' />
                         </Button>
                         <Button active>
