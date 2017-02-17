@@ -10,6 +10,23 @@ import { Container, Header, CheckBox,List,Badge,
 Radio,ListItem,Item, Button,Tabs,Tab, Title,Input, 
 Content, Footer, FooterTab,  Left, Right, Body, Icon ,
 Switch,Fab,} from 'native-base';
+import Svg,{
+    Circle,
+    Ellipse,
+    G,
+    LinearGradient,
+    RadialGradient,
+    Line,
+    Path,
+    Polygon,
+    Polyline,
+    Rect,
+    Symbol,
+    Text as svgText,
+    Use,
+    Defs,
+    Stop
+} from 'react-native-svg';
 
 import {
   AppRegistry,
@@ -23,12 +40,6 @@ import {
   TouchableHighlight,
   ScrollView,
 } from 'react-native';
-import Calendar from 'react-native-calendar';
-import moment from 'moment';
-
-const customDayHeadings = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const customMonthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May',
-  'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 const styles = StyleSheet.create({
   container: {
@@ -51,20 +62,12 @@ const styles = StyleSheet.create({
     },
 });
 
- const customStyle = {
-    eventIndicator: {
-      backgroundColor: 'blue',
-      width: 10,
-      height: 10,
-    },
-  }
+
 
 export default class reactApp extends Component {
 	  constructor(props) {
         super(props);
-        this.state = {
-		  selectedDate: moment().format(),
-		};
+       
     };
 	
     render() {
@@ -80,25 +83,28 @@ export default class reactApp extends Component {
                     </Button>
                 </Header>
 				<Content>
-             <Calendar customStyle={customStyle} 
-				  ref="calendar"
-				  
-				  eventDates={['2017-02-03', '2017-02-05', '2017-02-28', '2017-02-30']}
-				  events={[{date: '2017-02-04', hasEventCircle: {backgroundColor: 'powderblue'}}]}
-				  scrollEnabled
-				  showControls
-				  dayHeadings={customDayHeadings}
-				  monthNames={customMonthNames}
-				  titleFormat={'MMMM YYYY'}
-				  prevButtonText={'Prev'}
-				  nextButtonText={'Next'}
-				  onDateSelect={(date) => this.setState({ selectedDate: date })}
-				  onTouchPrev={(e) => console.log('onTouchPrev: ', e)}
-				  onTouchNext={(e) => console.log('onTouchNext: ', e)}
-				  onSwipePrev={(e) => console.log('onSwipePrev: ', e)}
-				  onSwipeNext={(e) => console.log('onSwipeNext', e)}
-				/>
-				<Text>Selected Date: {moment(this.state.selectedDate).format('MMMM DD YYYY')}</Text>
+                   <Svg
+						height="100"
+						width="100"
+					>
+                <Circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    stroke="blue"
+                    strokeWidth="2.5"
+                    fill="green"
+                />
+                <Rect
+                    x="15"
+                    y="15"
+                    width="70"
+                    height="70"
+                    stroke="red"
+                    strokeWidth="2"
+                    fill="yellow"
+                />
+            </Svg>
 				</Content>
                 <Footer>
                    <FooterTab>

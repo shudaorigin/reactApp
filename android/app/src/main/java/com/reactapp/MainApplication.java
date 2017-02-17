@@ -4,7 +4,8 @@ import android.app.Application;
 import android.util.Log;
 
 import com.facebook.react.ReactApplication;
-import com.horcrux.svg.RNSvgPackage;
+import com.horcrux.svg.SvgPackage;
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import rnxmpp.RNXMPPPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.keyee.pdfview.PDFView;
@@ -33,7 +34,9 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
 	      //new PDFView(), // <------ add here
           new MainReactPackage(),
-            new RNSvgPackage(),
+            new SvgPackage(),
+            new ReactNativePushNotificationPackage(),
+      
           new RNXMPPPackage(),
           new VectorIconsPackage(),
           new PDFView(),

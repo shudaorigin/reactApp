@@ -85,6 +85,9 @@
 		AC0AEEC4F3F04F48B8007C9B /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 898C2B1D74354E49BDA3DF16 /* SimpleLineIcons.ttf */; };
 		6F009C9F941F4B089F1B20C5 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E3869B0940A4186BC6C7DC5 /* Zocial.ttf */; };
 		2358F84365D04E2AAE43A501 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A7E1C26E004C3E847D6ACD /* libRNSVG.a */; };
+		34D3751E1AE0400184172705 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB59CD61F294A7FB3685E76 /* libAirMaps.a */; };
+		365E0E9189644E16BAC100E8 /* libRNXMPP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 346F2B62C8734021A5A63BC8 /* libRNXMPP.a */; };
+		18357416E65C498990AC7EBF /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66722D79CA244F7EBCE76670 /* OFL.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -360,6 +363,11 @@
 		8E3869B0940A4186BC6C7DC5 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		0BD6B8AF4A62428DBCF28FF1 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; name = "RNSVG.xcodeproj"; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		A5A7E1C26E004C3E847D6ACD /* libRNSVG.a */ = {isa = PBXFileReference; name = "libRNSVG.a"; path = "libRNSVG.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		F514927747534B4D9F6F5FFF /* AirMaps.xcodeproj */ = {isa = PBXFileReference; name = "AirMaps.xcodeproj"; path = "../node_modules/react-native-maps/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		DAB59CD61F294A7FB3685E76 /* libAirMaps.a */ = {isa = PBXFileReference; name = "libAirMaps.a"; path = "libAirMaps.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		9D68565B221A4C95A3444778 /* RNXMPP.xcodeproj */ = {isa = PBXFileReference; name = "RNXMPP.xcodeproj"; path = "../node_modules/react-native-xmpp/RNXMPP.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		346F2B62C8734021A5A63BC8 /* libRNXMPP.a */ = {isa = PBXFileReference; name = "libRNXMPP.a"; path = "libRNXMPP.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		66722D79CA244F7EBCE76670 /* OFL.txt */ = {isa = PBXFileReference; name = "OFL.txt"; path = "../node_modules/native-base/Fonts/OFL.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,6 +400,8 @@
 				538E196636CA4843B2CE9DC7 /* libRNVectorIcons.a in Frameworks */,
 				09766CECB6054A64A113A712 /* ServerlessDemo.app in Resources */,
 				2358F84365D04E2AAE43A501 /* libRNSVG.a in Frameworks */,
+				34D3751E1AE0400184172705 /* libAirMaps.a in Frameworks */,
+				365E0E9189644E16BAC100E8 /* libRNXMPP.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +574,8 @@
 				33CF139F694546F596D124BD /* RNVectorIcons.xcodeproj */,
 				50A195A35A6043378565EF87 /* ServerlessDemo.xcodeproj */,
 				0BD6B8AF4A62428DBCF28FF1 /* RNSVG.xcodeproj */,
+				F514927747534B4D9F6F5FFF /* AirMaps.xcodeproj */,
+				9D68565B221A4C95A3444778 /* RNXMPP.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -648,6 +660,7 @@
 				A09DD045FC834FC0A1EFB611 /* Octicons.ttf */,
 				898C2B1D74354E49BDA3DF16 /* SimpleLineIcons.ttf */,
 				8E3869B0940A4186BC6C7DC5 /* Zocial.ttf */,
+				66722D79CA244F7EBCE76670 /* OFL.txt */,
 			);
 			name = Resources;
 			path = "";
@@ -1055,6 +1068,7 @@
 				5B1711E15BCA4CD3B2BDB047 /* Octicons.ttf in Resources */,
 				AC0AEEC4F3F04F48B8007C9B /* SimpleLineIcons.ttf in Resources */,
 				6F009C9F941F4B089F1B20C5 /* Zocial.ttf in Resources */,
+				18357416E65C498990AC7EBF /* OFL.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1194,6 +1208,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1214,6 +1230,8 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reactApp.app/reactApp";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1290,6 +1308,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1319,6 +1339,8 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1355,6 +1377,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1379,6 +1403,8 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
