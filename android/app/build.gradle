@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':@remobile/react-native-splashscreen')
     compile project(':react-native-dialog')
     compile project(':react-native-svg')
     compile project(':react-native-push-notification')

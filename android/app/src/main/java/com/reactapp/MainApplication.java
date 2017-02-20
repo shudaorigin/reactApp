@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.facebook.react.ReactApplication;
+import com.remobile.splashscreen.RCTSplashScreenPackage;
 import com.honaf.dialog.MyDialogPackage;
 import com.horcrux.svg.SvgPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
@@ -35,6 +36,7 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
 	      //new PDFView(), // <------ add here
           new MainReactPackage(),
+            new RCTSplashScreenPackage(MainActivity.activity),
             new MyDialogPackage(),
             new SvgPackage(),
             new ReactNativePushNotificationPackage(),

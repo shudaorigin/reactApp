@@ -88,6 +88,7 @@
 		34D3751E1AE0400184172705 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB59CD61F294A7FB3685E76 /* libAirMaps.a */; };
 		365E0E9189644E16BAC100E8 /* libRNXMPP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 346F2B62C8734021A5A63BC8 /* libRNXMPP.a */; };
 		18357416E65C498990AC7EBF /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 66722D79CA244F7EBCE76670 /* OFL.txt */; };
+		AD20EB9A2E434DEA9BC72B74 /* libRCTSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2150C71162DE46F2AEDCD6A1 /* libRCTSplashScreen.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -368,6 +369,8 @@
 		9D68565B221A4C95A3444778 /* RNXMPP.xcodeproj */ = {isa = PBXFileReference; name = "RNXMPP.xcodeproj"; path = "../node_modules/react-native-xmpp/RNXMPP.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		346F2B62C8734021A5A63BC8 /* libRNXMPP.a */ = {isa = PBXFileReference; name = "libRNXMPP.a"; path = "libRNXMPP.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		66722D79CA244F7EBCE76670 /* OFL.txt */ = {isa = PBXFileReference; name = "OFL.txt"; path = "../node_modules/native-base/Fonts/OFL.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5173693DDC114629B4FED047 /* RCTSplashScreen.xcodeproj */ = {isa = PBXFileReference; name = "RCTSplashScreen.xcodeproj"; path = "../node_modules/@remobile/react-native-splashscreen/ios/RCTSplashScreen.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		2150C71162DE46F2AEDCD6A1 /* libRCTSplashScreen.a */ = {isa = PBXFileReference; name = "libRCTSplashScreen.a"; path = "libRCTSplashScreen.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,6 +405,7 @@
 				2358F84365D04E2AAE43A501 /* libRNSVG.a in Frameworks */,
 				34D3751E1AE0400184172705 /* libAirMaps.a in Frameworks */,
 				365E0E9189644E16BAC100E8 /* libRNXMPP.a in Frameworks */,
+				AD20EB9A2E434DEA9BC72B74 /* libRCTSplashScreen.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +580,7 @@
 				0BD6B8AF4A62428DBCF28FF1 /* RNSVG.xcodeproj */,
 				F514927747534B4D9F6F5FFF /* AirMaps.xcodeproj */,
 				9D68565B221A4C95A3444778 /* RNXMPP.xcodeproj */,
+				5173693DDC114629B4FED047 /* RCTSplashScreen.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1210,6 +1215,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1230,6 +1236,7 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reactApp.app/reactApp";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1310,6 +1317,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1339,6 +1347,7 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1379,6 +1388,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1403,6 +1413,7 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

@@ -43,6 +43,7 @@ import {
 } from 'react-native';
 
 import Dialog from 'react-native-dialog';
+var SplashScreen = require('@remobile/react-native-splashscreen');
 				
 var PushNotification = require('react-native-push-notification');
 PushNotification.configure({
@@ -143,6 +144,9 @@ const onButtonPress = () => {
 export default class reactApp extends Component {
 	constructor(props) {
         super(props);      
+    };
+	componentDidMount() {
+        SplashScreen.hide();
     };
 	
     render() {
