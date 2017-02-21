@@ -62,6 +62,8 @@ import ImagePro from 'react-native-image-progress';
 import ProgressBar from 'react-native-progress/Bar';
 import Menu from './component/Menu.js';
 import SideMenu from 'react-native-side-menu';
+import TwoSideMenus from './component/TwoSideMenus.js';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -128,7 +130,8 @@ const menu = <Menu navigator={navigator}/>;
 export default class reactApp extends Component {
 	constructor(props) {
         super(props);  
-        this.state = {date:"2016-05-15"};		
+        this.state = {date:"2016-05-15"};	
+      
     };
 	componentDidMount() {
         SplashScreen.hide();
@@ -170,7 +173,12 @@ export default class reactApp extends Component {
 		      ];
 
         return (
-		 <SideMenu menu={menu}>
+		 //<SideMenu menu={menu}>
+		  <TwoSideMenus
+			ref="menu"
+			leftMenu={<Menu ref="leftMenu" color="yellow"/>}
+			rightMenu={<Menu ref="rightMenu" color="red"/>}>
+       
             <Container style={{ backgroundColor: 'white',borderLeftWidth:1,borderLeftColor:'#CCCCCC',}}>
                 <Header searchBar rounded>
                     <Item success>
@@ -277,7 +285,8 @@ export default class reactApp extends Component {
                     </FooterTab>
                 </Footer>
             </Container>
-		 </SideMenu>
+		 </TwoSideMenus>
+	 	 //</SideMenu>
         );
     }
 }

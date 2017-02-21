@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     top: 0,
     backgroundColor: 'transparent',
     width: window.width,
-    height: window.height
+   // height: window.height
   }
 });
 
