@@ -34,6 +34,7 @@ import {
   ListView,
   TextInput ,
   View,
+  navigator,
   Button as LButton,
   Alert,
   Image,
@@ -41,11 +42,18 @@ import {
   TouchableHighlight,
   ScrollView,
 } from 'react-native';
+import LoginScreen from "./screens/login/index";
 
 import Dialog from 'react-native-dialog';
-var SplashScreen = require('@remobile/react-native-splashscreen');
-				
+import Swipeable from 'rn-swipeable/lib';
+
+var SplashScreen = require('@remobile/react-native-splashscreen');				
 var PushNotification = require('react-native-push-notification');
+var firstTime = require('react-native-catch-first-time');
+var DeviceInfo = require('react-native-device-info');
+var HTMLView = require('react-native-htmlview');
+
+
 PushNotification.configure({
 
     // (optional) Called when Token is generated (iOS and Android)
@@ -100,6 +108,10 @@ const styles = StyleSheet.create({
    dayCircleFiller: {
       backgroundColor: 'blue',
     },
+	a: {
+		fontWeight: '300',
+		color: '#FF3366', // pink links 
+	  },
 });
 const onButtonPress = () => {
 	 PushNotification.localNotification({
@@ -137,9 +149,6 @@ const onButtonPress = () => {
             },
         }], undefined); 
  };
- 
-
-
 
 export default class reactApp extends Component {
 	constructor(props) {
@@ -150,11 +159,13 @@ export default class reactApp extends Component {
     };
 	
     render() {
-		
+		var htmlContent = '<p><a href="http://www.baidu.com">&hearts; nice job!</a></p>'
 		var doms = [];
-		for (var i = 0; i < 240; i++) {
-		  doms.push(<ListItem><Text>Simon Mignolet----- + {i} </Text></ListItem>);
-		}
+		for (var i = 0; i < 40; i++) {
+		 // doms.push(<ListItem><Text>Simon Mignolet----- + {i} </Text></ListItem>);
+		};
+		
+
         return (
             <Container>
                 <Header searchBar rounded>
@@ -167,14 +178,40 @@ export default class reactApp extends Component {
                     </Button>
                 </Header>
 				<Content>
+				
                    <LButton
 					  onPress={onButtonPress2}
 					  title="Press Me"
 					  accessibilityLabel="See an informative alert"
 					/>
 					
-					{doms}
-					
+					<HTMLView
+						value={htmlContent}
+						stylesheet={styles}
+					  />
+			
+					<Swipeable
+					  left={[
+						{
+						  text: 'reply',
+						  onPress:() => console.log('reply'),
+						  style: { backgroundColor: 'orange',  },
+						  renderChildren: () => <View><Text> 设置级别 </Text></View>
+						}
+					  ]}
+					  right={[
+						{
+						  text: 'delete',
+						  onPress:() => Alert.alert('delete'),
+						  style: { backgroundColor: 'red',  },
+						  renderChildren: () => <View><Text> 删除</Text></View>
+						}
+					  ]}
+					  onOpen={() => console.log('open')}
+					  onClose={() => console.log('close')}
+					>
+					  <View style={{flex: 1,height:40, justifyContent: 'center'}}><Text> Tsdfe right children </Text></View>
+					</Swipeable>
 					
 				</Content>
                 <Footer>
