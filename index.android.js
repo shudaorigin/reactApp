@@ -60,6 +60,8 @@ import DatePicker from 'react-native-datepicker';
 import Swiper from 'react-native-swiper';
 import ImagePro from 'react-native-image-progress';
 import ProgressBar from 'react-native-progress/Bar';
+import Menu from './component/Menu.js';
+import SideMenu from 'react-native-side-menu';
 
 const styles = StyleSheet.create({
   container: {
@@ -121,7 +123,8 @@ const onButtonPress = () => {
             },
         }], undefined); 
  };
-
+const menu = <Menu navigator={navigator}/>;
+ 
 export default class reactApp extends Component {
 	constructor(props) {
         super(props);  
@@ -167,7 +170,8 @@ export default class reactApp extends Component {
 		      ];
 
         return (
-            <Container>
+		 <SideMenu menu={menu}>
+            <Container style={{ backgroundColor: 'white',borderLeftWidth:1,borderLeftColor:'#CCCCCC',}}>
                 <Header searchBar rounded>
                     <Item success>
                         <Icon name="search" />
@@ -273,6 +277,7 @@ export default class reactApp extends Component {
                     </FooterTab>
                 </Footer>
             </Container>
+		 </SideMenu>
         );
     }
 }

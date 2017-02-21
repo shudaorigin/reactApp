@@ -16,8 +16,7 @@ const styles = StyleSheet.create({
   menu: {
     flex: 1,
     width: window.width,
-    height: window.height,
-    backgroundColor: 'gray',
+    height: window.height,    	
     padding: 20,
   },
   avatarContainer: {
