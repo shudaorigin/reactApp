@@ -58,7 +58,8 @@ var HTMLView = require('react-native-htmlview');
 import Swipeout from './component/Swipeout.js';
 import DatePicker from 'react-native-datepicker';
 import Swiper from 'react-native-swiper';
-import ImagePicker from './component/ImagePickerComp.js';
+import ImagePro from 'react-native-image-progress';
+import ProgressBar from 'react-native-progress/Bar';
 
 const styles = StyleSheet.create({
   container: {
@@ -243,7 +244,13 @@ export default class reactApp extends Component {
 						}}
 						onDateChange={(date) => {this.setState({date: date})}}
 					  />
-					 <ImagePicker />
+					<ImagePro 
+					  source={{ uri: 'http://loremflickr.com/640/480/dog' }} 
+					  indicator={ProgressBar} 
+					  style={{
+						width: 320, 
+						height: 240, 
+					  }}/>
 				</Content>
                 <Footer>
                    <FooterTab>
