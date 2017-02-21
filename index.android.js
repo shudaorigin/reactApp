@@ -58,6 +58,7 @@ var HTMLView = require('react-native-htmlview');
 import Swipeout from './component/Swipeout.js';
 import DatePicker from 'react-native-datepicker';
 import Swiper from 'react-native-swiper';
+import ImagePicker from './component/ImagePickerComp.js';
 
 const styles = StyleSheet.create({
   container: {
@@ -242,17 +243,7 @@ export default class reactApp extends Component {
 						}}
 						onDateChange={(date) => {this.setState({date: date})}}
 					  />
-					<Swiper style={styles.wrapper} showsButtons={true}>
-						<View style={styles.slide1}>
-						  <Text style={styles.text}>Hello Swiper</Text>
-						</View>
-						<View style={styles.slide2}>
-						  <Text style={styles.text}>Beautiful</Text>
-						</View>
-						<View style={styles.slide3}>
-						  <Text style={styles.text}>And simple</Text>
-						</View>
-					  </Swiper>
+					 <ImagePicker />
 				</Content>
                 <Footer>
                    <FooterTab>
