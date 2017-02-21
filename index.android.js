@@ -52,6 +52,8 @@ var PushNotification = require('react-native-push-notification');
 var firstTime = require('react-native-catch-first-time');
 var DeviceInfo = require('react-native-device-info');
 var HTMLView = require('react-native-htmlview');
+import Swipeout from './component/Swipeout.js';
+
 
 
 PushNotification.configure({
@@ -164,7 +166,11 @@ export default class reactApp extends Component {
 		for (var i = 0; i < 40; i++) {
 		 // doms.push(<ListItem><Text>Simon Mignolet----- + {i} </Text></ListItem>);
 		};
-		
+		var swipeoutBtns = [
+				  {
+					text: 'Button'
+				  }
+		      ];
 
         return (
             <Container>
@@ -205,6 +211,12 @@ export default class reactApp extends Component {
 						  onPress:() => Alert.alert('delete'),
 						  style: { backgroundColor: 'red',  },
 						  renderChildren: () => <View><Text> 删除</Text></View>
+						},
+						{
+						  text: 'delete',
+						  onPress:() => Alert.alert('delete'),
+						  style: { backgroundColor: 'yellow',  },
+						  renderChildren: () => <View><Text> 删除</Text></View>
 						}
 					  ]}
 					  onOpen={() => console.log('open')}
@@ -212,25 +224,26 @@ export default class reactApp extends Component {
 					>
 					  <View style={{flex: 1,height:40, justifyContent: 'center'}}><Text> Tsdfe right children </Text></View>
 					</Swipeable>
+					<Swipeout></Swipeout>
 					
 				</Content>
                 <Footer>
                    <FooterTab>
-                        <Button>                            
-                            <Text>Apps</Text>
+                        <Button>                
                             <Icon name='ios-apps-outline' />
+							<Text>Apps</Text>
                         </Button>
                         <Button  badgeValue="2">
-                            <Text >Camera</Text>
                             <Icon name='ios-camera-outline' />
+							<Text >Camera</Text>
                         </Button>
                         <Button active>
-                            <Text>Navigate</Text>
                             <Icon name='ios-compass' />
+							<Text>Navigate</Text>
                         </Button>
                         <Button>
-                            <Text>Contact</Text>
                             <Icon name='ios-contact-outline' />
+							<Text>Contact</Text>
                         </Button>
                     </FooterTab>
                 </Footer>
