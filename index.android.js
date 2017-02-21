@@ -185,7 +185,7 @@ export default class reactApp extends Component {
                         <Icon name="search" />
                         <Input placeholder="Search" />
                     </Item>
-                    <Button danger  style={{width:60,height:40,marginLeft:2,}} >
+                    <Button danger  style={{width:60,height:40,marginLeft:2,}}   onPress={() => this.refs.menu.openMenu('left')} >
                         <Text>查询</Text>
                     </Button>
                 </Header>
