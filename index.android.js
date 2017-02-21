@@ -38,9 +38,13 @@ import {
   Button as LButton,
   Alert,
   Image,
+  Linking,
   TouchableOpacity,
   TouchableHighlight,
   ScrollView,
+  Platform,
+  BackAndroid,
+  ToastAndroid,
 } from 'react-native';
 import LoginScreen from "./screens/login/index";
 
@@ -159,6 +163,29 @@ export default class reactApp extends Component {
 	componentDidMount() {
         SplashScreen.hide();
     };
+   componentWillMount() {
+		if (Platform.OS === 'android') {
+		  BackAndroid.addEventListener('hardwareBackPress', this.onBackAndroid);
+		}
+   };
+  componentWillUnmount() {
+    if (Platform.OS === 'android') {
+      BackAndroid.removeEventListener('hardwareBackPress', this.onBackAndroid);
+    }
+  };
+  
+  onBackAndroid = () => {
+    Alert.alert(
+            '退出系统',
+            '确定退出系统吗？',
+            [
+			  {text: '取消'},
+			  {text: '确定', onPress: () =>  BackAndroid.exitApp()},
+            ]
+    );
+    return true;
+  };
+  
 	
     render() {
 		var htmlContent = '<p><a href="http://www.baidu.com">&hearts; nice job!</a></p>'
@@ -191,9 +218,10 @@ export default class reactApp extends Component {
 					  accessibilityLabel="See an informative alert"
 					/>
 					
-					<HTMLView
+					<HTMLView style={{height:40,}}
 						value={htmlContent}
-						stylesheet={styles}
+						onLinkPress={(url) => Linking.openURL.call(Linking, url)} 
+					    stylesheet={styles}
 					  />
 			
 					<Swipeable
@@ -224,7 +252,7 @@ export default class reactApp extends Component {
 					>
 					  <View style={{flex: 1,height:40, justifyContent: 'center'}}><Text> Tsdfe right children </Text></View>
 					</Swipeable>
-					<Swipeout></Swipeout>
+				
 					
 				</Content>
                 <Footer>
