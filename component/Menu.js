@@ -3,7 +3,9 @@ const {
   Dimensions,
   StyleSheet,
   ScrollView,
+  Button,
   View,
+  Alert,
   Image,
   Text,
 } = require('react-native');
@@ -16,7 +18,7 @@ const styles = StyleSheet.create({
   menu: {
     flex: 1,
     width: window.width,
-    height: window.height,    	
+    height: window.height,
     padding: 20,
   },
   avatarContainer: {
@@ -49,6 +51,10 @@ module.exports = class Menu extends Component {
   render() {
     return (
       <ScrollView scrollsToTop={false} style={styles.menu}>
+        <Button title='关闭'  onPress={() =>{this.props.parentObj.refs.menu.closeMenu()}} style={{width:60,height:40,marginLeft:2,}}  >
+            <Text>关闭</Text>
+        </Button>
+
         <View style={styles.avatarContainer}>
           <Image
             style={styles.avatar}

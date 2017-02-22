@@ -7,7 +7,7 @@
 'use strict';
 import React, { Component } from 'react';
 import { Container, Header, CheckBox,List,Badge,
-Radio,ListItem,Item, Button,Tabs,Tab, Title,Input, 
+Radio,ListItem,Item, Button,Tabs,Tab, Title,Input,
 Content, Footer, FooterTab,  Left, Right, Body, Icon ,
 Switch,Fab,} from 'native-base';
 import Svg,{
@@ -51,7 +51,7 @@ import LoginScreen from "./screens/login/index";
 import Dialog from 'react-native-dialog';
 import Swipeable from 'rn-swipeable/lib';
 
-var SplashScreen = require('@remobile/react-native-splashscreen');				
+var SplashScreen = require('@remobile/react-native-splashscreen');
 var firstTime = require('react-native-catch-first-time');
 var DeviceInfo = require('react-native-device-info');
 var HTMLView = require('react-native-htmlview');
@@ -63,7 +63,8 @@ import ProgressBar from 'react-native-progress/Bar';
 import Menu from './component/Menu.js';
 import SideMenu from 'react-native-side-menu';
 import TwoSideMenus from './component/TwoSideMenus.js';
-
+import TextFit from './component/TextFit.js';
+import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
 
 const styles = StyleSheet.create({
   container: {
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
     },
 	a: {
 		fontWeight: '300',
-		color: '#FF3366', // pink links 
+		color: '#FF3366', // pink links
 	  },
 	   wrapper: {
   },
@@ -115,29 +116,30 @@ const styles = StyleSheet.create({
   },
 });
 const onButtonPress = () => {
-	
-}; 
+
+};
  const onButtonPress2 = () => {
 	Dialog.prompt("填写资料", null, [{
             text: '确定',
             onPress: (value) => {
-               
+
             },
-        }], undefined); 
+        }], undefined);
  };
-const menu = <Menu navigator={navigator}/>;
- 
+const menu = <Menu  navigator={navigator}/>;
+
 export default class reactApp extends Component {
+
 	constructor(props) {
-        super(props);  
-        this.state = {date:"2016-05-15"};	
-      
+        super(props);
+        this.state = {date:"2016-05-15"};
+
     };
 	componentDidMount() {
         SplashScreen.hide();
     };
    componentWillMount() {
-		if (Platform.OS === 'android') {
+		if (Platform.OS === 'android' ) {
 		  BackAndroid.addEventListener('hardwareBackPress', this.onBackAndroid);
 		}
    };
@@ -146,7 +148,7 @@ export default class reactApp extends Component {
       BackAndroid.removeEventListener('hardwareBackPress', this.onBackAndroid);
     }
   };
-  
+
   onBackAndroid = () => {
     Alert.alert(
             '退出系统',
@@ -158,8 +160,8 @@ export default class reactApp extends Component {
     );
     return true;
   };
-  
-	
+
+
     render() {
 		var htmlContent = '<p><a href="http://www.baidu.com">&hearts; nice job!</a></p>'
 		var doms = [];
@@ -176,9 +178,9 @@ export default class reactApp extends Component {
 		 //<SideMenu menu={menu}>
 		  <TwoSideMenus
 			ref="menu"
-			leftMenu={<Menu ref="leftMenu" color="yellow"/>}
-			rightMenu={<Menu ref="rightMenu" color="red"/>}>
-       
+			leftMenu={<Menu parentObj={this} ref="leftMenu" color="yellow"/>}
+			rightMenu={<Menu parentObj={this} ref="rightMenu" color="red"/>}>
+
             <Container style={{ backgroundColor: 'white',borderLeftWidth:1,borderLeftColor:'#CCCCCC',}}>
                 <Header searchBar rounded>
                     <Item success>
@@ -190,19 +192,19 @@ export default class reactApp extends Component {
                     </Button>
                 </Header>
 				<Content>
-				
+
                    <LButton
 					  onPress={onButtonPress2}
 					  title="Press Me"
 					  accessibilityLabel="See an informative alert"
 					/>
-					
+
 					<HTMLView style={{height:40,}}
 						value={htmlContent}
-						onLinkPress={(url) => Linking.openURL.call(Linking, url)} 
+						onLinkPress={(url) => Linking.openURL.call(Linking, url)}
 					    stylesheet={styles}
 					  />
-			
+
 					<Swipeable
 					  left={[
 						{
@@ -231,7 +233,7 @@ export default class reactApp extends Component {
 					>
 					  <View style={{flex: 1,height:40, justifyContent: 'center'}}><Text> Tsdfe right children </Text></View>
 					</Swipeable>
-				
+
 					<DatePicker
 						style={{width: 200}}
 						date={this.state.date}
@@ -256,17 +258,30 @@ export default class reactApp extends Component {
 						}}
 						onDateChange={(date) => {this.setState({date: date})}}
 					  />
-					<ImagePro 
-					  source={{ uri: 'http://loremflickr.com/640/480/dog' }} 
-					  indicator={ProgressBar} 
+					<ImagePro
+					  source={{ uri: 'http://loremflickr.com/640/480/dog' }}
+					  indicator={ProgressBar}
 					  style={{
-						width: 320, 
-						height: 240, 
+						width: 320,
+						height: 240,
 					  }}/>
+
+        <List>
+          <ListItem>
+              <AutoGrowingTextInput  placeholder={'Your Message'} />
+          </ListItem>
+          <ListItem>
+            <AutoGrowingTextInput  placeholder={'Your Message'} />
+          </ListItem>
+          <ListItem>
+             <AutoGrowingTextInput  placeholder={'Your Message'} />
+          </ListItem>
+      </List>
+
 				</Content>
                 <Footer>
                    <FooterTab>
-                        <Button>                
+                        <Button>
                             <Icon name='ios-apps-outline' />
 							<Text>Apps</Text>
                         </Button>

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 const {
   Dimensions,
-  StyleSheet,  
+  StyleSheet,
   PanResponder,
   View,
   Animated,
@@ -304,7 +304,7 @@ TwoSideMenus.propTypes = {
 };
 
 TwoSideMenus.defaultProps = {
-  gestures: true,
+  gestures: false,
   toleranceX: 10,
   toleranceY: 10,
   openLeftMenuOffset: openLeftMenuOffset,
