@@ -36,6 +36,7 @@
     "react-native-pdf-view": "^0.3.2",
     "react-native-progress": "^3.2.0",
     "react-native-push-notification": "^2.2.1",
+    "react-native-root-modal": "^1.0.7",
     "react-native-router-redux": "^0.2.2",
     "react-native-side-menu": "^0.20.1",
     "react-native-sidebar": "^0.2.0",

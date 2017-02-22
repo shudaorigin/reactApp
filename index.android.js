@@ -45,6 +45,7 @@ import {
   Platform,
   BackAndroid,
   ToastAndroid,
+
 } from 'react-native';
 import LoginScreen from "./screens/login/index";
 
@@ -65,6 +66,8 @@ import SideMenu from 'react-native-side-menu';
 import TwoSideMenus from './component/TwoSideMenus.js';
 import TextFit from './component/TextFit.js';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
+import Modal  from 'react-native-root-modal';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -119,12 +122,16 @@ const onButtonPress = () => {
 
 };
  const onButtonPress2 = () => {
+   /*
 	Dialog.prompt("填写资料", null, [{
             text: '确定',
             onPress: (value) => {
 
             },
         }], undefined);
+    */
+
+
  };
 const menu = <Menu  navigator={navigator}/>;
 
@@ -132,8 +139,9 @@ export default class reactApp extends Component {
 
 	constructor(props) {
         super(props);
-        this.state = {date:"2016-05-15"};
-
+        this.state = {
+          date:"2016-05-15",
+          visible: true};
     };
 	componentDidMount() {
         SplashScreen.hide();
@@ -161,6 +169,17 @@ export default class reactApp extends Component {
     return true;
   };
 
+  hideModal = () => {
+         this.setState({
+             visible: false
+         });
+     };
+
+  showModal = () => {
+           this.setState({
+               visible: true
+           });
+       };
 
     render() {
 		var htmlContent = '<p><a href="http://www.baidu.com">&hearts; nice job!</a></p>'
@@ -192,7 +211,30 @@ export default class reactApp extends Component {
                     </Button>
                 </Header>
 				<Content>
-
+          <Modal
+              style={{
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                  flex:1,
+                  justifyContent:'center',
+                  alignItems: 'center',
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              }}
+              visible={this.state.visible}
+          >
+            <Text style={{color:'white',}}>
+               Just put  element anywhere, And it will be front of other elements. And you can set element`s style or other properties inherited from element}
+            </Text>
+            <TouchableHighlight
+                   style={[styles.button, styles.close]}
+                   underlayColor="#aaa"
+                   onPress={this.hideModal}
+               >
+                   <Text style={{color:'red',fontSize:34,}}>Close</Text>
+               </TouchableHighlight>
+           </Modal>
                    <LButton
 					  onPress={onButtonPress2}
 					  title="Press Me"
@@ -281,9 +323,9 @@ export default class reactApp extends Component {
 				</Content>
                 <Footer>
                    <FooterTab>
-                        <Button>
+                        <Button onPress={this.showModal}>
                             <Icon name='ios-apps-outline' />
-							<Text>Apps</Text>
+							<Text style={{color:'white',fontWeight:'bold',}}>帮助</Text>
                         </Button>
                         <Button  badgeValue="2">
                             <Icon name='ios-camera-outline' />
