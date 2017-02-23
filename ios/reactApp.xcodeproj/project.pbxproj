@@ -93,6 +93,8 @@
 		C9DF2C6E8E76464DA65D4468 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A54D15BEF5407983903F60 /* libRNImagePicker.a */; };
 		D6D61546C97B45D9B1BDC501 /* libimageCropPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EF30852FEF492A877C4C8F /* libimageCropPicker.a */; };
 		A3DABA78E68D4CD282D7812C /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C494852B257D4295AA193E6C /* libRCTVideo.a */; };
+		ADA267276DDD455DA94C22C9 /* libAutoGrowTextInput.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A20AF3770F4738B485B92E /* libAutoGrowTextInput.a */; };
+		E7648937F1C1464BB7FB833F /* libSQLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C151DCE6947F4EEE897CA26A /* libSQLite.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -383,6 +385,10 @@
 		76EF30852FEF492A877C4C8F /* libimageCropPicker.a */ = {isa = PBXFileReference; name = "libimageCropPicker.a"; path = "libimageCropPicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		B6A24FAD91DC46CCB193D855 /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; name = "RCTVideo.xcodeproj"; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		C494852B257D4295AA193E6C /* libRCTVideo.a */ = {isa = PBXFileReference; name = "libRCTVideo.a"; path = "libRCTVideo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		F42F43A719CB4CF5BF65C34C /* AutoGrowTextInput.xcodeproj */ = {isa = PBXFileReference; name = "AutoGrowTextInput.xcodeproj"; path = "../node_modules/react-native-autogrow-textinput/ios/AutoGrowTextInput.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		C3A20AF3770F4738B485B92E /* libAutoGrowTextInput.a */ = {isa = PBXFileReference; name = "libAutoGrowTextInput.a"; path = "libAutoGrowTextInput.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		5778CC23E7D84119940F195D /* SQLite.xcodeproj */ = {isa = PBXFileReference; name = "SQLite.xcodeproj"; path = "../node_modules/react-native-sqlite-storage/src/ios/SQLite.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		C151DCE6947F4EEE897CA26A /* libSQLite.a */ = {isa = PBXFileReference; name = "libSQLite.a"; path = "libSQLite.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +428,8 @@
 				C9DF2C6E8E76464DA65D4468 /* libRNImagePicker.a in Frameworks */,
 				D6D61546C97B45D9B1BDC501 /* libimageCropPicker.a in Frameworks */,
 				A3DABA78E68D4CD282D7812C /* libRCTVideo.a in Frameworks */,
+				ADA267276DDD455DA94C22C9 /* libAutoGrowTextInput.a in Frameworks */,
+				E7648937F1C1464BB7FB833F /* libSQLite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +609,8 @@
 				FDEEC6A8CD4248C1AF574DA3 /* RNImagePicker.xcodeproj */,
 				C5955E36196744D8A8FCF493 /* imageCropPicker.xcodeproj */,
 				B6A24FAD91DC46CCB193D855 /* RCTVideo.xcodeproj */,
+				F42F43A719CB4CF5BF65C34C /* AutoGrowTextInput.xcodeproj */,
+				5778CC23E7D84119940F195D /* SQLite.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1227,6 +1237,8 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reactApp.app/reactApp";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1247,6 +1259,8 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/reactApp.app/reactApp";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;
@@ -1311,6 +1325,8 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1340,6 +1356,8 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;
@@ -1364,6 +1382,8 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1388,6 +1408,8 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;

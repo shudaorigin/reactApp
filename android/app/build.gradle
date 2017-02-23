@@ -96,16 +96,16 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
     }
-	
+
 	signingConfigs {
         release {
-            storeFile file("my.keystore") 
-            storePassword 'shubaishou' 
-            keyAlias 'my.keystore' 
-            keyPassword 'shubaishou' 
+            storeFile file("my.keystore")
+            storePassword 'shubaishou'
+            keyAlias 'my.keystore'
+            keyPassword 'shubaishou'
 		}
     }
-	
+
     splits {
         abi {
             reset()
@@ -145,7 +145,7 @@ dependencies {
     compile project(':react-native-dialog')
     compile project(':react-native-svg')
     compile project(':react-native-push-notification')
-   
+    compile project(':react-native-sqlite-storage')
     compile project(':react-native-xmpp')
     compile project(':react-native-vector-icons')
     compile project(':react-native-pdf-view')

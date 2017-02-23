@@ -2,7 +2,7 @@ package com.reactapp;
 
 import android.app.Application;
 import android.util.Log;
-
+import org.pgsqlite.SQLitePluginPackage;
 import com.facebook.react.ReactApplication;
 import com.brentvatne.react.ReactVideoPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
@@ -40,10 +40,11 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
 	      //new PDFView(), // <------ add here
           new MainReactPackage(),
-            new ReactVideoPackage(),
-            new PickerPackage(),
+          new ReactVideoPackage(),
+          new PickerPackage(),
           new RNDeviceInfo(),
           new RCTSplashScreenPackage(MainActivity.activity),
+          new SQLitePluginPackage(),
           new MyDialogPackage(),
           new SvgPackage(),
           new ReactNativePushNotificationPackage(),
