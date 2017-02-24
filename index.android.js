@@ -15,6 +15,7 @@ import React, { Component } from 'react';
 import { AppRegistry, Alert,Dimensions } from 'react-native';
 import AppIntro from 'react-native-app-intro';
 var SplashScreen = require('@remobile/react-native-splashscreen');
+var PasswordGesture = require('react-native-gesture-password');
 
 const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
@@ -38,6 +39,44 @@ class reactApp extends Component {
   componentDidMount() {
         SplashScreen.hide();
   }
+  
+   onEnd(password) {
+        if (password == '123') {
+            this.setState({
+                status: 'right',
+                message: 'Password is right, success.'
+            });
+
+            // your codes to close this view
+        } else {
+            this.setState({
+                status: 'wrong',
+                message: 'Password is wrong, try again.'
+            });
+        }
+    };
+	
+    onStart() {
+        this.setState({
+            status: 'normal',
+            message: 'Please input your password.'
+        });
+    };
+	
+    onReset() {
+        this.setState({
+            status: 'normal',
+            message: 'Please input your password (again).'
+        });
+    };
+	  
+	constructor(props) {
+        super(props);
+        this.state = {
+            message: 'Please input your password.',
+            status: 'normal'
+        }
+    };
   
   render() {
     const pageArray = [{
@@ -76,6 +115,7 @@ class reactApp extends Component {
       level: 10,
     }];
     return (
+	/*
       <AppIntro
         onNextBtnClick={this.nextBtnHandle}
         onDoneBtnClick={this.doneBtnHandle}
@@ -83,6 +123,14 @@ class reactApp extends Component {
         onSlideChange={this.onSlideChangeHandle}
         pageArray={pageArray}
       />
+	*/
+	 <PasswordGesture
+                ref='pg'
+                status={this.state.status}
+                message={this.state.message}
+                onStart={() => this.onStart()}
+                onEnd={(password) => this.onEnd(password)}
+                />
     );
   }
 }
