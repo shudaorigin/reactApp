@@ -39,6 +39,7 @@
     "react-native-pdf-view": "^0.3.2",
     "react-native-progress": "^3.2.0",
     "react-native-push-notification": "^2.2.1",
+    "react-native-redux-router-simple": "^1.0.0",
     "react-native-root-modal": "^1.0.7",
     "react-native-router-redux": "^0.2.2",
     "react-native-side-menu": "^0.20.1",
@@ -56,6 +57,7 @@
     "react-redux": "^5.0.3",
     "react-router": "^3.0.2",
     "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
     "rn-swipeable": "^1.0.4"
   },
   "devDependencies": {
