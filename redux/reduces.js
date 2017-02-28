@@ -1,10 +1,10 @@
 
 import { combineReducers } from 'redux'
 
-import { ADD_TODO, TOGGLE_TODO, SET_FILTER, Filters,TODOS_AJAX,FETCH_DATA_FAIL,SHOW_MESSAGE_FOR_ME } from './actions.js'
+import { ADD_TODO, TOGGLE_TODO, SET_FILTER, Filters,TODOS_AJAX,FETCH_DATA_FAIL,SHOW_MESSAGE_FOR_ME ,LOAD_MORE_WORK} from './actions.js'
 function todos(state = [], action) {
 
-    //console.info("--------------"+action);
+    console.info(action);
 	switch(action.type){
 		case ADD_TODO:
 			return [
@@ -23,6 +23,14 @@ function todos(state = [], action) {
 				}
 				return todo
 			})
+	    case LOAD_MORE_WORK:
+			return [
+			        ...state,
+				    {
+						text: 'sdf',
+						completed: false
+					}
+		           ]
 		case SHOW_MESSAGE_FOR_ME:
 
 				   if (state.length>1) return state;

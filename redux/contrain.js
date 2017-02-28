@@ -3,12 +3,16 @@
 import React, { Component } from 'react';
 import { AppRegistry, Alert,Dimensions,View,Text,Button } from 'react-native';
 import AppIntro from 'react-native-app-intro';
-import {addTodo,toggleTodo} from './actions.js'
+import {addTodo,toggleTodo,loadMoreWorkAsync} from './actions.js'
 import {  connect } from 'react-redux'
+
+
+
+
 
 class reactApp extends Component {
 
-  
+ 
   constructor(props) {
         super(props);
         this.state = {
@@ -22,11 +26,12 @@ class reactApp extends Component {
     return (
 			<View>
 			  <Text>{this.props.todos.length}ok</Text>	
+			  <Text>{this.props.todos.length}ok</Text>	
               <Button
 			    title='Press Me!'
 				style={{fontSize: 20, color: 'green'}}
 				styleDisabled={{color: 'red'}}
-				onPress={() => dispatch(addTodo('sdf'))}>
+				onPress={() => dispatch(loadMoreWorkAsync(dispatch))}>
 				
 			  </Button>		  
 			</View>		   
