@@ -21,7 +21,7 @@ import { Provider, connect } from 'react-redux'
 import dataBases from './redux/reduces.js'
 
 import App from './redux/contrain.js'
-
+import codePush from 'react-native-code-push'
 import thunk from 'redux-thunk'
 
 let store = createStore(
@@ -32,8 +32,18 @@ let store = createStore(
 class reactApp extends Component {
 
   componentDidMount() {
-        SplashScreen.hide();
+	codePush.sync();
+    SplashScreen.hide();
+	
   }
+   componentWillMount() {
+     // codePush.disallowRestart();
+    }
+
+    componentWillUnmount() {
+      //codePush.allowRestart();
+    }
+	
 
   render() {
 	const { dispatch} = this.props

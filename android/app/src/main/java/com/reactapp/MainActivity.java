@@ -1,6 +1,7 @@
 package com.reactapp;
 
 import com.facebook.react.ReactActivity;
+import com.microsoft.codepush.react.CodePush;
 import android.app.Activity;
 
 public class MainActivity extends ReactActivity {
